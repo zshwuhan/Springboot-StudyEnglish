@@ -44,7 +44,8 @@ public static String getUUID(){
 
 5. 用户收到邮箱后，用户点击邮箱，然后进入RegisterController处理
 
-        如果数据库中的验证码与用户注册的验证码相同则注册成功
+     如果数据库中的验证码与用户注册的验证码相同则注册成功
+        
         ```java
             //验证激活码 登录
             @RequestMapping("/user/checkCode")
