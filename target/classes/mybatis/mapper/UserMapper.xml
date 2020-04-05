@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace：绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.chun.myspringboot.dao.UserMapper">
+    <!--  增加用户-->
+    <insert id="addUser" parameterType="User" >
+        insert into studywords.user (userName, password, email, activeCode,activeStatus) values (#{userName},#{password},#{email},#{activeCode},#{activeStatus});
+    </insert>
+
+    <!--修改用户-->
+    <update id="updeteUser" parameterType="User">
+        update studywords.user set userName=#{userName},password=#{password},activeCode=#{activeCode},activeStatus=#{activeStatus}   where userId=#{userId} ;
+    </update>
+
+  <!-- 根据激活码查询用户-->
+    <select id="queryUserByActiveCode" resultType="User">
+        select * from  studywords.user where activeCode=#{activeCode}
+    </select>
+
+  <!--根据账号密码和状态码(1)登录-->
+    <select id="loginByEmailAndPasswordAndActiveStatus" resultType="User">
+        select * from  user  where studywords.user.email=#{email} and password=#{password} and activeStatus=1
+    </select>
+
+    <!--根据Id查询用户-->
+    <select id="queryUserById" resultType="User" >
+    select * from studywords.user where userId=#{userId}
+     </select>
+</mapper>

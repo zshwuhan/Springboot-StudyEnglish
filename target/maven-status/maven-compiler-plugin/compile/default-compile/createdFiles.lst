@@ -1,0 +1,12 @@
+com\chun\myspringboot\MyspringbootApplication.class
+com\chun\myspringboot\util\IDUtils.class
+com\chun\myspringboot\controller\RegisterController.class
+com\chun\myspringboot\service\UserService.class
+com\chun\myspringboot\dao\UserMapper.class
+com\chun\myspringboot\pojo\User.class
+com\chun\myspringboot\service\SendEmailImpl.class
+com\chun\myspringboot\controller\LoginController.class
+com\chun\myspringboot\controller\TestController.class
+com\chun\myspringboot\service\UserServiceImpl.class
+com\chun\myspringboot\service\SendEmail.class
+com\chun\myspringboot\controller\IndexController.class
