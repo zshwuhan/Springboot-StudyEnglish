@@ -8,6 +8,7 @@ import com.chun.myspringboot.util.IDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -19,11 +20,6 @@ public class RegisterController {
     @Autowired
     private SendEmailImpl sendEmail;
 
-    //去注册页面
-    @RequestMapping("/toregister")
-    public String toRegister(){
-        return "register/page-register";
-    }
 
     //进行注册
     @RequestMapping("/register")
@@ -36,7 +32,6 @@ public class RegisterController {
         //加入到数据库
         userService.addUser(user);
         System.out.println("增加成功");
-
         //发送邮件激活
         String email = user.getEmail();
         String subject = "来自StudyEnglish网站的激活邮件";
@@ -49,22 +44,15 @@ public class RegisterController {
 
     //验证激活码 登录
     @RequestMapping("/user/checkCode")
-    public String active(String activeCode){
-
-        System.out.println("进入checkCode");
+    public String active(String activeCode,Model model){
         //查询这个激活码
-
         User user = userService.queryUserByActiveCode(activeCode);
-
-        System.out.println("user---->"+user);
-
         if (user != null)
-        {
+        {   model.addAttribute("msg","恭喜你激活成功，现在可以立即登录");
             //给这个用户激活
             user.setActiveStatus(1);
             //把激活码清除
             user.setActiveCode(null);
-
             userService.updateUser(user);
         }
         return "index";

@@ -35,22 +35,21 @@
                 </div>
                 <div class="login-form">
                     <form th:action="@{/register}" method="post">
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label>用户名</label>
-                            <input type="text" class="form-control"  name="userName" placeholder="User Name">
+                            <input type="text" class="form-control"  name="userName" placeholder="User Name" required>
                         </div>
                         <div class="form-group">
                             <label>邮箱地址</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label>密码</label>
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
-
                         <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">注册</button>
                         <div class="register-link m-t-15 text-center">
-                            <p>已经有账号 ? <a href="/index"> 立即登录</a></p>
+                            <p>已经有账号 ? <a href="/index.html"> 立即登录</a></p>
                         </div>
                     </form>
                 </div>

@@ -30,7 +30,15 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: com.chun.myspringboot.pojo
+  configuration:
+    map-underscore-to-camel-case: true #采用驼峰标识
 
 
+# pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 
