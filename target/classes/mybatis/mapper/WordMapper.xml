@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace：绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.chun.myspringboot.dao.WordMapper">
+
+<!--
+############################################################
+               关于四级的操作
+############################################################
+-->
+
+    <!-- 查询所有Cet4单词-->
+    <select id="queryAllWordCet4" resultType="Cet4">
+        select * from studywords.cet4
+    </select>
+
+    <!--查询一个Cet4单词-->
+    <select id="queryWordCet4ById" resultType="Cet4">
+        select * from studywords.cet4 where wordId=#{wordId}
+    </select>
+
+
+<!--
+############################################################
+               关于六级的操作
+############################################################
+-->
+    <!-- 查询所有Cet6单词-->
+    <select id="queryAllWordCet6" resultType="Cet6">
+        select * from studywords.cet6
+    </select>
+
+</mapper>
