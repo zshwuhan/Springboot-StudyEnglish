@@ -17,7 +17,7 @@ spring:
 
   thymeleaf:
     cache: false
-    check-template-location: true
+    check-template-location: on
     prefix: classpath:/templates/
     suffix: .html
     servlet:
@@ -31,7 +31,7 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: com.chun.myspringboot.pojo
   configuration:
-    map-underscore-to-camel-case: true #采用驼峰标识
+    map-underscore-to-camel-case: on #采用驼峰标识
 
 
 # pagehelper

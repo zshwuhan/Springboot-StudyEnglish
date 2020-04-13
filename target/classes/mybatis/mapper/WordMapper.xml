@@ -11,25 +11,83 @@
 ############################################################
 -->
 
+
+    <!--增加一个已认识的的单词-->
+    <update id="addWordCet4Remember" parameterType="int" >
+        update studywords.cet4 set remember=1 where wordId=#{wordId}
+    </update>
+    <!--删除一个已认识的单词 -->
+    <update id="deleteCet4Remember" parameterType="int" >
+        update studywords.cet4 set remember=0 where wordId=#{wordId}
+    </update>
+    <!--删除所有认识的单词-->
+    <update id="deleteAllCet4Remember" parameterType="int">
+        update studywords.cet4 set remember=0 where remember=1
+    </update>
+
+
     <!-- 查询所有Cet4单词-->
     <select id="queryAllWordCet4" resultType="Cet4">
         select * from studywords.cet4
     </select>
 
-    <!--查询一个Cet4单词-->
+
+    <!--根据Id查询一个Cet4单词-->
     <select id="queryWordCet4ById" resultType="Cet4">
         select * from studywords.cet4 where wordId=#{wordId}
     </select>
-
+    <!--查询四级单词的数量-->
+    <select id="queryWordCet4Number" resultType="int">
+        SELECT COUNT(wordId) FROM cet4;
+    </select>
+    <!--查询四级已会单词的数量-->
+    <select id="queryWordCet4RememberNumber" resultType="int">
+        select count(remember) from cet4 where remember=1
+    </select>
+    <!--查询四级不会的单词-->
+    <select id="queryWordCet4Unable" resultType="Cet4">
+        SELECT * FROM cet4 where remember=0 ORDER BY RAND() limit 1
+    </select>
 
 <!--
 ############################################################
                关于六级的操作
 ############################################################
 -->
+    <!--增加一个已认识的的单词-->
+    <update id="addWordCet6Remember" parameterType="int" >
+        update studywords.cet6 set remember=1 where wordId=#{wordId}
+    </update>
+    <!--删除一个已认识的单词 -->
+    <update id="deleteCet6Remember" parameterType="int" >
+        update studywords.cet6 set remember=0 where wordId=#{wordId}
+    </update>
+
+    <!--删除所有认识的单词-->
+    <update id="deleteAllCet6Remember" parameterType="int">
+        update studywords.cet6 set remember=0 where remember=1
+    </update>
+
+    <!--根据Id查询一个Cet4单词-->
+    <select id="queryWordCet6ById" resultType="Cet6">
+        select * from studywords.cet6 where wordId=#{wordId}
+    </select>
+
     <!-- 查询所有Cet6单词-->
     <select id="queryAllWordCet6" resultType="Cet6">
         select * from studywords.cet6
     </select>
 
+    <!--查询六级单词的数量-->
+    <select id="queryWordCet6Number" resultType="int">
+        SELECT COUNT(wordId) FROM cet6;
+    </select>
+    <!--查询六级已会单词的数量-->
+    <select id="queryWordCet6RememberNumber" resultType="int">
+        select count(remember) from cet6 where remember=1
+    </select>
+    <!--查询六级不会的单词-->
+    <select id="queryWordCet6Unable" resultType="Cet6">
+        SELECT * FROM cet6 where remember=0 ORDER BY RAND() limit 1
+    </select>
 </mapper>

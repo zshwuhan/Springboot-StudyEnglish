@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>Let's study English !</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -71,18 +71,65 @@
 
         <div class="row">
             <div class="col-lg-8">
-                <div class="card" >
-                    <div  class="card-header">
-                        <h2>apple </h2>
-                        <button onclick="playAudio('http://res.iciba.com/resource/amp3/oxford/0/38/63/3863946c5b590136f176ef51229885b1.mp3')">[apple]</button>
-                    </div>
+                <div class="card">
                     <div class="card-body">
-                        asdasda
-                        asdasd
-
+                        <br>
+                        <blockquote>
+                            <p th:text="${msg}">信息写这里</p>
+                        </blockquote>
                     </div>
                 </div>
+                <a th:href="@{/selectword}" type="button" class="btn btn-outline-primary btn-lg btn-block">选择其他单词本</a>
+                <hr>
+                <a th:href="@{/main.html}" type="button" class="btn btn-outline-success btn-lg btn-block">回到主页</a>
+            </div><!-- /# column -->
+            <!--进度条-->
+            <div class="col-lg-4" th:fragment="cet4-progress">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="progress-box progress-1">
+                            <h4 class="por-title">已记住</h4>
+                            <div class="por-txt">[[${percent4}]]</div>
+                            <div class="progress mb-2" style="height: 5px;">
+                                <div id="cet4-remember" class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <!--从后台获取%，修改样式-->
+                        <script th:inline="javascript">
+                            var num = [[${percent4}]];
+                            console.log(num);
+                            var obj=document.getElementById('cet4-remember');
+                            obj.style.width= num ;
+                        </script>
+                        <div class="progress-box progress-2">
+                            <h4 class="por-title">未记住</h4>
+                            <div class="por-txt" >[[${unpercent4}]]</div>
+                            <div class="progress mb-2" style="height: 5px;">
+                                <div id="cet4-unremember" class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <!--从后台获取%，修改样式-->
+                        <script th:inline="javascript">
+                            var num = [[${unpercent4}]];
+                            console.log(num);
+                            var obj=document.getElementById('cet4-unremember');
+                            obj.style.width= num ;
+                        </script>
+
+                        <button  onclick="ResetWord()" id="ResetWord" class="btn btn-outline-warning btn-lg btn-block">重新学习</button>
+                        <script>
+                            function ResetWord() {
+                                if (confirm("您确定需要重新学习吗？")) {
+                                    window.location.href="/ResetWordCet4";
+                                } else {
+                                    return false;
+                                }
+                            }
+                        </script>
+                    </div> <!-- /.card-body -->
+                </div>
             </div>
+
 
         </div>
 

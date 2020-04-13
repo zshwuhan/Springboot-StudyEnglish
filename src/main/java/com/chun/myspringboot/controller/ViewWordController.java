@@ -27,6 +27,7 @@ public class ViewWordController {
         return "view-word";
     }
 
+
     /**
      * 浏览六级单词
      */

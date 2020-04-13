@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>Let's study English !</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -73,16 +73,78 @@
             <div class="col-lg-8">
                 <div class="card" >
                     <div  class="card-header">
-                        <h2>apple </h2>
-                        <button onclick="playAudio('http://res.iciba.com/resource/amp3/oxford/0/38/63/3863946c5b590136f176ef51229885b1.mp3')">[apple]</button>
-                    </div>
-                    <div class="card-body">
-                        asdasda
-                        asdasd
+
+                        <h2 th:text="${cet4.getWordName()}">CET4 </h2>
+
+                        <button  onclick="playAudio()" th:text="${cet4.getAudio()}">[apple]</button>
+                        <audio id='audioPlay' src='http://dict.youdao.com/speech?audio=mild' th:value="${cet4.getWordName()}"/>
 
                     </div>
+                    <div class="card-body " id="body">
+                        [[${cet4.getExplanation()}]]
+                        <br>
+                        <hr>
+                        <br>
+                        例句：[[${cet4.getExample()}]]
+                    </div>
+
+                </div>
+                <script th:inline="javascript">
+
+                    function playAudio(){
+                        //得到读音名字
+                        var cet4=[[${cet4.getWordName()}]];
+                        console.log(cet4);
+                        //改变读音地址
+                        document.getElementById('audioPlay').src='http://dict.youdao.com/speech?audio='+cet4;
+                        document.getElementById('audioPlay').play();
+                    }
+                </script>
+
+
+                <a  th:href="@{/studyWordCet4}" class="btn btn-secondary btn-lg btn-block">下一个</a>
+            </div>
+            <!--进度条-->
+            <div class="col-lg-4" th:fragment="cet4-progress">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="progress-box progress-1">
+                            <h4 class="por-title">已记住</h4>
+                            <div class="por-txt">[[${percent4}]]</div>
+                            <div class="progress mb-2" style="height: 5px;">
+                                <div id="cet4-remember" class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <!--从后台获取%，修改样式-->
+                        <script th:inline="javascript">
+                            var num = [[${percent4}]];
+                            console.log(num);
+                            var obj=document.getElementById('cet4-remember');
+                            obj.style.width= num ;
+
+
+                        </script>
+
+
+                        <div class="progress-box progress-2">
+                            <h4 class="por-title">未记住</h4>
+                            <div class="por-txt" >[[${unpercent4}]]</div>
+                            <div class="progress mb-2" style="height: 5px;">
+                                <div id="cet4-unremember" class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <!--从后台获取%，修改样式-->
+                        <script th:inline="javascript">
+                            var num = [[${unpercent4}]];
+                            console.log(num);
+                            var obj=document.getElementById('cet4-unremember');
+                            obj.style.width= num ;
+                        </script>
+
+                    </div> <!-- /.card-body -->
                 </div>
             </div>
+
 
         </div>
 

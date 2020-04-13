@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace：绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.chun.myspringboot.dao.NoticeMapper">
+
+    <!--查看公告所有信息-->
+    <select id="queryAllNotice" resultType="Notice">
+        select * from studywords.notice
+    </select>
+
+    <!--查看最新公告的内容-->
+    <select id="queryNoticeById" resultType="String">
+        SELECT content FROM notice WHERE noticeId=(SELECT MAX(noticeId) FROM notice )
+    </select>
+</mapper>
