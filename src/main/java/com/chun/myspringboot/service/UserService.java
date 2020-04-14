@@ -10,7 +10,8 @@ public interface UserService {
      User queryUserByActiveCode(String activeCode);
     //根据邮箱密码与状态码登录
     User loginByEmailAndPasswordAndActiveStatus(User user);
-
+    //根据邮箱密码与Role=1登录
+    User AdminLogin(User user);
     //增加用户
     int addUser(User user);
 

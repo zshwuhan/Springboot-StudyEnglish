@@ -84,9 +84,8 @@
                         <div class="card-body">
                             <h2 class="box-title">最新公告</h2>
                             <br>
-                            <blockquote>
-                                <p th:text="${notice}">欢迎来到Study-English学习系统，该系统是基于SpringBoot+Mybatis开发，使用BootStrap作为前端页面框架，使用Thymeleaf模板引擎渲染页面。该系统有背单词，听听力，做练习，生成本，每日一句等功能。</p>
-                            </blockquote>
+                            <!-- 用th:utext会解析html-->
+                                <div th:utext="${notice}"><p><b>1、什么是Vue?</b></p><p>vue真的太好用了，是前后段分离必不可少的开发框架之一……</p><p><br></p><p><i><u>2、Vue能干什么？</u></i></p><p>模拟数据</p><p><br></p></div>
                             <button type="button" class="btn btn-link float-right">历史公告</button>
                         </div>
                     </div>
@@ -119,7 +118,10 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+
+
 
             <div class="row">
                 <a class="col-lg-3 col-md-6"  th:href="@{/selectword}">
@@ -136,7 +138,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="col-lg-3 col-md-6"  th:href="@{/studyword}">
+                <a class="col-lg-3 col-md-6"  th:href="@{/viewbook}">
                     <div class="card ">
                         <div class="card-body btn btn-primary">
                             <h2>看阅读</h2>

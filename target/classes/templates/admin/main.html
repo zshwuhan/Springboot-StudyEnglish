@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Let's study English !</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" th:href="@{/css/cs-skin-elastic.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+
+<body>
+
+<!-- Left Panel -->
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a th:href="@{/admin/main}"><i class="menu-icon fa fa-laptop"></i>主页</a>
+                </li>
+                <li class="menu-title">操作</li><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-edit"></i>修改单词</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">四级</a></li>
+                        <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">六级</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>修改书籍</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <!--                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>-->
+                        <li><i class="fa fa-table"></i><a th:href="@{/viewWord/cet4}" >四级书</a></li>
+                        <li><i class="fa fa-table"></i><a th:href="@{/viewWord/cet6}" >六级书</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a th:href="@{/admin/viewNotice}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-volume-down"></i>修改公告</a>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>修改用户</a>
+
+                </li>
+
+                <li class="menu-title">个人中心</li><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>修改密码</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
+                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside>
+
+
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="top-left">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/admin/main}"><img th:src="@{/images/logo.png}" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+
+
+        <!-- 导航栏-->
+        <div class="top-right">
+            <div class="header-menu">
+                <div class="header-left">
+                    <div class="dropdown for-notification">
+                        管理员您好！
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-secret"></i>
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="notification">
+                            <p class="red">控制中心</p>
+                            <a class="dropdown-item media" th:href="@{/main.html}">
+                                <i class="f fa fa-user"></i>
+                                <p>普通用户</p>
+                            </a>
+                            <a class="dropdown-item media" th:href="@{/logout}">
+                                <i class="fa fa-power-off"></i>
+                                <p>退出登录</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header >
+
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+        <!-- Animated -->
+            <div class="row">
+                <!-- 公告-->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="box-title">欢迎您，尊敬的管理员</h2>
+                            <br>
+                            <div>
+                                <p><b>您拥有以下的操作权限</b></p>
+                                <p>1、用户的增删改查</p>
+                                <p>2、单词的增删改查</p>
+                                <p>3、书籍的增删改查</p>
+                                <p>4、公告的增删改查</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+    </div>
+    <!-- /.content -->
+    <div class="clearfix"></div>
+    <!-- Footer -->
+    <div th:replace="commons/footer::footer"/>
+
+    <!-- /.site-footer -->
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+
+
+</body>
+</html>

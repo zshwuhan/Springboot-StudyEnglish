@@ -1,10 +1,15 @@
 package com.chun.myspringboot.util;
 
-import com.chun.myspringboot.service.WordServiceImpl;
+import com.chun.myspringboot.service.Impl.WordServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
+
+/**
+ * 调用DataUtils处理数据生成百分比，
+ * 然后，往页面传值
+ */
 @Controller
 public class ProgressUtils {
    @Autowired
@@ -12,7 +17,6 @@ public class ProgressUtils {
 
    @Autowired
    DataUtils dataUtils;
-
    public void ProgressCet4(Model model){
        /**
         * 四级操作

@@ -13,8 +13,7 @@ public interface UserMapper {
 
     /**
      * 注册用户
-     * @param user
-     * @return
+     * 与登录用户
      */
     //增加用户--注册用户
     int addUser(User user);
@@ -23,7 +22,8 @@ public interface UserMapper {
 
     //根据账号密码和状态码(1)登录
     User loginByEmailAndPasswordAndActiveStatus(User user);
-
+    //根据账号密码和role=1登录
+    User AdminLogin(User user);
     /**
      * 操作用户
      * @param user

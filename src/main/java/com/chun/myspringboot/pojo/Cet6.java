@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Cet6 {
-    private int wordId;
+    private Integer wordId;
     private String wordName;
     private String audio;
     private String explanation;

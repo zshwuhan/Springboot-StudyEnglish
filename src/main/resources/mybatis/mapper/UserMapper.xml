@@ -19,9 +19,13 @@
         select * from  studywords.user where activeCode=#{activeCode}
     </select>
 
-  <!--根据账号密码和状态码(1)登录-->
+  <!-- 普通用户登录，根据账号密码和状态码(1)登录-->
     <select id="loginByEmailAndPasswordAndActiveStatus" resultType="User">
         select * from  user  where studywords.user.email=#{email} and password=#{password} and activeStatus=1
+    </select>
+    <!--管理员登录，根据账号密码和Role(1)登录-->
+    <select id="AdminLogin" resultType="User">
+        select * from  user  where studywords.user.email=#{email} and password=#{password} and role=1
     </select>
 
     <!--根据Id查询用户-->
