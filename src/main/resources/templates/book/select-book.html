@@ -32,7 +32,7 @@
 
 
 
-<div th:replace="commons/leftbar::leftbar"></div>
+<div th:replace="common/leftbar::leftbar"></div>
 
 
 
@@ -40,7 +40,7 @@
 
     <!-- Header-->
     <!-- Header-->
-    <div th:replace="commons/header::header"/>
+    <div th:replace="common/header::header"/>
 
     <div class="breadcrumbs">
         <div class="breadcrumbs-inner">
@@ -58,7 +58,7 @@
                             <ol class="breadcrumb text-right">
                                 <li><a href="#">主页</a></li>
                                 <li><a href="#">学习中心</a></li>
-                                <li class="active">背单词</li>
+                                <li class="active">书籍</li>
                             </ol>
                         </div>
                     </div>
@@ -72,37 +72,31 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Basic Table</strong>
+                        <strong class="card-title">书籍栏</strong>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-layout:fixed" >
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">序号</th>
+                                <th scope="col">书名</th>
+                                <th scope="col">作者</th>
+                                <th scope="col">简介</th>
+                                <th scope="col">操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                            <style type="text/css">.table {table-layout:fixed}</style>
+                            <tr th:each="book:${book}">
+                                <td th:text="${book.getBookId()}">序号</td>
+                                <td th:text="${book.getBookName()}">书名</td>
+                                <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" th:text="${book.getBookUser()}">作者</td>
+                                <td th:text="${book.getDescription()}" >简介</td>
+                                <td>
+                                    <a class="btn btn-sm btn-success" th:href="@{/watchBook/}+${book.getBookId()}">查看</a>
+                                </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -114,7 +108,7 @@
 
     <div class="clearfix"></div>
 
-    <div th:replace="commons/footer::footer"/>
+    <div th:replace="common/footer::footer"/>
 
 
 </div><!-- /#right-panel -->

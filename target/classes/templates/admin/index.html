@@ -38,6 +38,7 @@
             <div class="login-form">
                 <form th:action="@{/admin}" >
                     <div class="form-group">
+                        <h4>管理员登录</h4>
                         <label>邮箱地址</label>
                         <span class="text-danger" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></span>
                         <input type="email" name="email" class="form-control" placeholder="Email" required>

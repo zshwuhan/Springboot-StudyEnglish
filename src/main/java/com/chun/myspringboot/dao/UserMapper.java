@@ -26,17 +26,16 @@ public interface UserMapper {
     User AdminLogin(User user);
     /**
      * 操作用户
-     * @param user
-     * @return
+     *
      */
 
     //删除用户
-    int deleteUser(User user);
+    int deleteUser(Integer userId);
     //修改用户
-    int updeteUser(User user);
+    int updateUser(User user);
 
     //查询所有用户信息
-     List<User> queryUserList();
+     List<User> queryAllUser();
      //根据Id查询用户
      User queryUserById(int userId);
 

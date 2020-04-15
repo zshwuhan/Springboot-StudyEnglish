@@ -63,13 +63,13 @@
 <body>
 
 <!-- Left Panel -->
-<div th:replace="commons/leftbar::leftbar"/>
+<div th:replace="common/leftbar::leftbar"/>
 
 
 <!-- Right Panel -->
 <div id="right-panel" class="right-panel">
     <!-- Header-->
-    <div th:replace="commons/header::header"></div>
+    <div th:replace="common/header::header"></div>
 
     <!-- /#header -->
     <!-- Content -->
@@ -86,7 +86,7 @@
                             <br>
                             <!-- 用th:utext会解析html-->
                                 <div th:utext="${notice}"><p><b>1、什么是Vue?</b></p><p>vue真的太好用了，是前后段分离必不可少的开发框架之一……</p><p><br></p><p><i><u>2、Vue能干什么？</u></i></p><p>模拟数据</p><p><br></p></div>
-                            <button type="button" class="btn btn-link float-right">历史公告</button>
+                            <a th:href="@{/toViewNotice}" type="button" class="btn btn-link float-right">历史公告</a>
                         </div>
                     </div>
                 </div><!-- /# column -->
@@ -158,7 +158,7 @@
     <!-- /.content -->
     <div class="clearfix"></div>
     <!-- Footer -->
-    <div th:replace="commons/footer::footer"/>
+    <div th:replace="common/footer::footer"/>
 
     <!-- /.site-footer -->
 </div>

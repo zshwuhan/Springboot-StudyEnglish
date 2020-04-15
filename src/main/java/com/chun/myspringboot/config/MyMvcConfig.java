@@ -21,6 +21,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html","/","/login","/css/**",
-                "/js/**","/images/**","","/register.html","/register","/user/checkCode","/toAdmin","/admin");
+                "/js/**","/images/**","","/register.html","/register","/user/checkCode","/toAdmin","/admin","/lib/**");
     }
 }
