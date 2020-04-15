@@ -90,8 +90,8 @@
                             <tr th:each="book:${book}">
                                 <td th:text="${book.getBookId()}">序号</td>
                                 <td th:text="${book.getBookName()}">书名</td>
-                                <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" th:text="${book.getBookUser()}">作者</td>
-                                <td th:text="${book.getDescription()}" >简介</td>
+                                <td  th:text="${book.getBookUser()}">作者</td>
+                                <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;"th:text="${book.getDescription()}" >简介</td>
                                 <td>
                                     <a class="btn btn-sm btn-success" th:href="@{/watchBook/}+${book.getBookId()}">查看</a>
                                 </td>

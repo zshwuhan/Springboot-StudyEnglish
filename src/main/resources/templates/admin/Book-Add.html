@@ -106,19 +106,20 @@
                 <div class="card col-lg-12">
                     <div class="card-header"> 添加书籍</div>
                     <div class="card-body card-block">
-                        <form action="#" method="post" class="">
-                            <div class="form-group"><label for="company" class=" form-control-label">书籍名称</label><input type="text" id="company" placeholder="Enter your company name" class="form-control"></div>
-                            <div class="form-group"><label for="company" class=" form-control-label">作者名字</label><input type="text" id="" placeholder="Enter your company name" class="form-control"></div>
-                            <label for="company" class=" form-control-label">书籍简介</label>
-                            <textarea class="form-control" rows="2" placeholder="书籍简介"></textarea>
+                        <form th:action="@{/admin/addBook}" method="post" >
+                            <div class="form-group"><label  class=" form-control-label">书籍名称</label><input type="text" name="bookName"   class="form-control" required></div>
+                            <div class="form-group"><label class=" form-control-label">作者名字</label><input type="text"  name="bookUser" class="form-control" required></div>
+                            <label  class=" form-control-label">书籍简介</label>
+                            <textarea class="form-control" rows="3" name="description" required></textarea>
 
                             <!--markdown-->
                             <hr>
                             <div id="test-editormd">
-            <textarea placeholder="书籍内容"  name="content" style="display: none">
+                             <textarea placeholder="书籍内容"  name="content" style="display: none" required>
 
-            </textarea>
+                             </textarea>
                             </div>
+                            <button type="submit" class="btn btn-success btn-lg btn-block">添加书籍</button>
                         </form>
 
                     </div>
