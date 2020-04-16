@@ -1,8 +1,6 @@
 package com.chun.myspringboot.controller;
 
-import com.chun.myspringboot.pojo.Book;
 import com.chun.myspringboot.pojo.Listen;
-import com.chun.myspringboot.service.Impl.BookServiceImpl;
 import com.chun.myspringboot.service.Impl.ListenServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +19,7 @@ public class ListenController {
     public String ViewListen(Model model){
         List<Listen> listen = listenService.queryAllListen();
         model.addAttribute("listen",listen);
-        return "user/listen/view-listen";
+        return "user/listen/select-listen";
     }
     //具体进入某一书籍
     @RequestMapping("/watchListen/{listenId}")

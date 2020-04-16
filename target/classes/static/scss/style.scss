@@ -706,7 +706,7 @@ aside.left-panel {
     } 
     .navbar-header {
         width: 100%;
-        background-color: $white; 
+        background-color: $white;
         padding: 0 1.25em 0 0;  
         > a {
             display: inline-block;
@@ -2650,6 +2650,7 @@ footer.site-footer {
     .right-panel {
         header.header {
             height: 62px;
+
         }
         .top-left, .top-right {
             width: 100%;

@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" th:href="@{/css/cs-skin-elastic.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/static/css/cs-skin-elastic.css}">
+    <link rel="stylesheet" th:href="@{/static/css/style.css}">
 
-    <link rel="stylesheet" th:href="@{/lib/editormd/css/editormd.preview.css}" />
+    <link rel="stylesheet" th:href="@{/static/lib/editormd/css/editormd.preview.css}" />
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <!--    首行缩进-->
@@ -96,7 +96,7 @@
 
                                 </div>
                                 <div class="typo-articles">
-                                    <audio  controls="controls" th:src="@{/static/video/}+${listen.getPath()}"></audio>
+                                    <audio  controls="controls" th:src="@{/static/video}+${listen.getPath()}"></audio>
                                 </div>
                                 <br>
 
@@ -129,15 +129,15 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 <!--<script th:src="@{/js/main.js}"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-<script th:src="@{/lib/editormd/editormd.min.js}"></script>
-<script th:src="@{/lib/editormd/lib/marked.min.js}"></script>
-<script th:src="@{/lib/editormd/lib/prettify.min.js}"></script>
+<script th:src="@{/static/lib/editormd/editormd.min.js}"></script>
+<script th:src="@{/static/lib/editormd/lib/marked.min.js}"></script>
+<script th:src="@{/static/lib/editormd/lib/prettify.min.js}"></script>
 
-<script th:src="@{/lib/editormd/lib/raphael.min.js}"></script>
-<script th:src="@{/lib/editormd/lib/underscore.min.js}"></script>
-<script th:src="@{/lib/editormd/lib/sequence-diagram.min.js}"></script>
-<script th:src="@{/lib/editormd/lib/flowchart.min.js}"></script>
-<script th:src="@{/lib/editormd/lib/jquery.flowchart.min.js}"></script>
+<script th:src="@{/static/lib/editormd/lib/raphael.min.js}"></script>
+<script th:src="@{/static/lib/editormd/lib/underscore.min.js}"></script>
+<script th:src="@{/static/lib/editormd/lib/sequence-diagram.min.js}"></script>
+<script th:src="@{/static/lib/editormd/lib/flowchart.min.js}"></script>
+<script th:src="@{/static/lib/editormd/lib/jquery.flowchart.min.js}"></script>
 
 
 

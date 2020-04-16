@@ -10,4 +10,6 @@ public class Cet6 {
     private String explanation;
     private String example;
     private String remember;
+    private Integer unremember;
+    private Integer collection;
 }

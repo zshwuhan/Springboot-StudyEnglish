@@ -38,6 +38,7 @@ public class MainPageController {
         @RequestMapping("/admin/main")
         public String toAdminPage(Model model){
 
+
             return "admin/main";
         }
 

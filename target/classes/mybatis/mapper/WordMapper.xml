@@ -48,6 +48,14 @@
     <select id="queryWordCet4Unable" resultType="Cet4">
         SELECT * FROM cet4 where remember=0 ORDER BY RAND() limit 1
     </select>
+    <!--把单词加入收藏夹-->
+    <update id="addCollection" parameterType="int">
+       update studywords.cet4 set collection=1 where wordId=#{wordId}
+    </update>
+    <!--把单词移除收藏夹-->
+    <update id="deleteCollection" parameterType="int">
+       update studywords.cet4 set collection=0 where wordId=#{wordId}
+    </update>
 
 <!--
 ############################################################

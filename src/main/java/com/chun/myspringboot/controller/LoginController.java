@@ -49,6 +49,7 @@ public class LoginController {
     public String AdminLogin(User user, Model model,HttpSession session){
         User usr = userService.AdminLogin(user);
         if (usr!=null){
+
             session.setAttribute("loginUser",user);
             System.out.println("管理员成功登录");
             return "redirect:/admin/main";

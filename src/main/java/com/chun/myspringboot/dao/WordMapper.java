@@ -20,9 +20,13 @@ public interface WordMapper {
     //增加单词
     Cet4 addWordCet4(Cet4 cet4);
     //删除单词
-    Cet4 delWordCet4(int word4Id);
+    Cet4 delWordCet4(int wordId);
     //修改单词
 
+    //把单词加入收藏夹
+    int addCollection(int wordId);
+    //把单词移除收藏夹
+    int deleteCollection(int wordId);
 
     //增加一个认识的单词
     int addWordCet4Remember(int wordId);

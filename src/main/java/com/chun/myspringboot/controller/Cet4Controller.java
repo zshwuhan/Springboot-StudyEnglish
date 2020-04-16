@@ -2,13 +2,13 @@ package com.chun.myspringboot.controller;
 
 import com.chun.myspringboot.pojo.Cet4;
 import com.chun.myspringboot.service.Impl.WordServiceImpl;
-import com.chun.myspringboot.util.DataUtils;
 import com.chun.myspringboot.util.ProgressUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.thymeleaf.util.StringUtils;
 
 import java.util.List;
 
@@ -34,15 +34,23 @@ public class Cet4Controller {
     /**
      * 学习操作
      */
-    //第一次进入学习，从数据库中查询不会单词，如何还有不会的就查询出来，如果没有了就提示
+    //第一次进入学习，
     @RequestMapping("/studyWordCet4")
     public String Cet4StudyWord(Model model){
+        //从数据库中查询不会单词，如何还有不会的就查询出来，如果没有了就提示
         Cet4 Cet4Unable = wordService.queryWordCet4Unable();
         if (Cet4Unable!=null){
-            //查询不认识的单词
+            //显示单词
             model.addAttribute("Cet4Unable",Cet4Unable);
-            System.out.println("查询不认识的四级单词");
             progressUtils.ProgressCet4(model);
+
+            //查询是否收藏过单词
+            Integer collection = Cet4Unable.getCollection();
+            if (collection==0 ){
+                model.addAttribute("msg","加入收藏");
+            }else {
+                model.addAttribute("msg","已经收藏");
+            }
 
             return "user/word/Cet4-StudyWord";
 
@@ -98,6 +106,30 @@ public class Cet4Controller {
         System.out.println("已经忘记单词！");
         progressUtils.ProgressCet4(model);
         return "redirect:/studyWordCet4";
+    }
+
+    //加入收藏夹
+    @RequestMapping("/addCollection/{wordId}")
+    public String AddCollection(@PathVariable("wordId")int wordId,Model model){
+        //先看看这个单词是不是已经收藏了
+
+        Cet4 Cet4Unable = wordService.queryWordCet4ById(wordId);
+        //显示单词
+        model.addAttribute("Cet4Unable",Cet4Unable);
+        progressUtils.ProgressCet4(model);
+        //如果没有收藏过，则收藏
+
+        if (Cet4Unable.getCollection()==0 ){
+            wordService.addCollection(wordId);
+            System.out.println("加入收藏");
+            model.addAttribute("msg","加入成功");
+        }else {//收藏过了，则取消收藏
+            wordService.deleteCollection(wordId);
+            model.addAttribute("msg","取消成功");
+        }
+
+
+        return "user/word/Cet4-StudyWord";
     }
 
 }

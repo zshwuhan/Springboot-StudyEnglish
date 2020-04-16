@@ -3,8 +3,8 @@
 <header id="header" class="header" th:fragment="header">
     <div class="top-left">
         <div class="navbar-header">
-            <a class="navbar-brand" th:href="@{/main.html}"><img th:src="@{/images/logo.png}" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+            <a class="navbar-brand" th:href="@{/main.html}"><img th:src="@{/static/images/logo.png}" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="./"><img th:src="@{/static/images/logo2.png}" alt="Logo"></a>
             <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
         </div>
     </div>
@@ -27,10 +27,27 @@
                             <i class="fa fa-user-secret"></i>
                             <p>管理员</p>
                         </a>
-                        <a class="dropdown-item media" href="#">
-                            <i class="fa fa-cog"></i>
-                            <p>修改信息</p>
-                        </a>
+                        <button onclick="UpdateUserName()"  class="dropdown-item media" >
+
+                            <i class="fa fa-cog" ></i>
+                            <p>修改名字</p>
+                        </button>
+<!--                        用这个方式修改名字-->
+
+                    <!--利用弹出框来修改名字-->
+                        <script>
+                            var oldname=[[${session.loginUser.getUserName()}]];
+                            function UpdateUserName() {
+                                console.log(oldname);
+                                var newname = prompt("请修改您的名字：", "");
+                                if (newname == null || newname == "") {
+                                    false ;
+                                } else {
+                                    window.location.href="/getStringParam/"+newname;
+                                }
+                            }
+                        </script>
+
                         <a class="dropdown-item media" th:href="@{/logout}">
                             <i class="fa fa-power-off"></i>
                             <p>退出登录</p>

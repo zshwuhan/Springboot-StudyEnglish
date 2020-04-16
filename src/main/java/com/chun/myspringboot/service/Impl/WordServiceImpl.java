@@ -63,6 +63,16 @@ public class WordServiceImpl implements WordService {
         return wordMapper.deleteAllCet4Remember();
     }
 
+    @Override
+    public int addCollection(int wordId) {
+        return wordMapper.addCollection(wordId);
+    }
+
+    @Override
+    public int deleteCollection(int wordId) {
+        return wordMapper.deleteCollection(wordId);
+    }
+
 
     /**
      * 六级操作

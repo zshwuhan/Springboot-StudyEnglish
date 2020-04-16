@@ -17,6 +17,11 @@ public interface WordService {
     //删除所有认识的单词
     int deleteAllCet4Remember();
 
+    //把单词加入收藏夹
+    int addCollection(int wordId);
+    //把单词移除收藏夹
+    int deleteCollection(int wordId);
+
     //查询全部cet4单词
     List<Cet4> queryAllWordCet4();
 
