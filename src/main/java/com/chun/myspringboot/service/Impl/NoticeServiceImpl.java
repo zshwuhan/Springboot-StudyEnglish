@@ -38,7 +38,7 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
-    public String queryNewNoticeById() {
+    public Notice queryNewNoticeById() {
         return noticeMapper.queryNewNoticeById();
     }
 }

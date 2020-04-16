@@ -1,5 +1,6 @@
 package com.chun.myspringboot.controller;
 
+import com.chun.myspringboot.pojo.Notice;
 import com.chun.myspringboot.pojo.User;
 import com.chun.myspringboot.service.Impl.NoticeServiceImpl;
 import com.chun.myspringboot.service.Impl.UserServiceImpl;
@@ -11,6 +12,7 @@ import org.springframework.web.util.HtmlUtils;
 
 @Controller
 public class MainPageController {
+
     @Autowired
     private NoticeServiceImpl noticeService;
     @Autowired
@@ -18,8 +20,7 @@ public class MainPageController {
 
         @RequestMapping("/main.html")
         public String toMainPage(Model model){
-            String notice = noticeService.queryNewNoticeById();
-
+            Notice notice = noticeService.queryNewNoticeById();
 
             model.addAttribute("notice",notice);
             return "main";

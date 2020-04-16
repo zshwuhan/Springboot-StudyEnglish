@@ -28,8 +28,8 @@
     </update>
 
     <!--查看最新公告的内容-->
-    <select id="queryNewNoticeById" resultType="String">
-        SELECT content FROM notice WHERE noticeId=(SELECT MAX(noticeId) FROM notice )
+    <select id="queryNewNoticeById" resultType="Notice">
+        SELECT * FROM notice WHERE noticeId=(SELECT MAX(noticeId) FROM notice )
     </select>
 
 </mapper>

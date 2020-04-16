@@ -1,5 +1,6 @@
 package com.chun.myspringboot.controller;
 
+import com.chun.myspringboot.pojo.Notice;
 import com.chun.myspringboot.pojo.User;
 import com.chun.myspringboot.service.Impl.NoticeServiceImpl;
 import com.chun.myspringboot.service.Impl.UserServiceImpl;
@@ -26,9 +27,8 @@ public class LoginController {
         User usr = userService.loginByEmailAndPasswordAndActiveStatus(user);
         if (usr!=null){
             session.setAttribute("loginUser",user);
-            //进入系统后展示公告
-            String notice = noticeService.queryNewNoticeById();
-            model.addAttribute("notice",notice);
+
+
             System.out.println("成功登录");
             return "redirect:/main.html";
         }else {

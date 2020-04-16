@@ -18,7 +18,11 @@
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
-
+<style>
+    .notice{
+        text-indent: 40px;
+    }
+</style>
     <style>
     #weatherWidget .currentDesc {
         color: #ffffff!important;
@@ -83,9 +87,12 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="box-title">最新公告</h2>
+                            <hr>
+
+                            <h4 class="text-center" th:text="${notice.getTitle()}">标题</h4>
                             <br>
                             <!-- 用th:utext会解析html-->
-                                <div th:utext="${notice}"><p><b>1、什么是Vue?</b></p><p>vue真的太好用了，是前后段分离必不可少的开发框架之一……</p><p><br></p><p><i><u>2、Vue能干什么？</u></i></p><p>模拟数据</p><p><br></p></div>
+                                <p class="notice" th:utext="${notice.getContent()}"></p>
                             <a th:href="@{/toViewNotice}" type="button" class="btn btn-link float-right">历史公告</a>
                         </div>
                     </div>

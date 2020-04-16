@@ -16,5 +16,5 @@ public interface NoticeService {
     //查看公告所有信息
     List<Notice> queryAllNotice();
     //查看最新公告的内容
-    String queryNewNoticeById();
+    Notice queryNewNoticeById();
 }

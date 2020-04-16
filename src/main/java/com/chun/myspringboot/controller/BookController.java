@@ -24,7 +24,9 @@ public class BookController {
     //具体进入某一书籍
     @RequestMapping("/watchBook/{bookId}")
     public String watchBook(@PathVariable("bookId")Integer bookId, Model model){
+        Book book = bookService.queryBookById(bookId);
 
+        model.addAttribute("book",book);
         return "book/watch-book";
     }
 
