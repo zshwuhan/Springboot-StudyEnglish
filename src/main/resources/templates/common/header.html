@@ -15,9 +15,12 @@
         <div class="header-menu">
             <div class="header-left">
                 <div class="dropdown for-notification">
+
+                    <a>尊敬的<b>[[${session.loginUser.getUserName()}]]</b>，欢迎您的到来！  </a>
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-user"></i>
                     </button>
+
                     <div class="dropdown-menu" aria-labelledby="notification">
                         <p class="red">控制中心</p>
                         <a class="dropdown-item media" th:href="@{/toAdmin}">

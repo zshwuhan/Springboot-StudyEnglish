@@ -17,13 +17,11 @@ public interface WordMapper {
      *
      *
      */
-
     //增加单词
     Cet4 addWordCet4(Cet4 cet4);
     //删除单词
     Cet4 delWordCet4(int word4Id);
     //修改单词
-
 
 
     //增加一个认识的单词

@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
-    @Autowired
-    private NoticeServiceImpl noticeService;
+
 
     @Autowired
     private UserServiceImpl userService;
@@ -23,11 +23,11 @@ public class LoginController {
      *登录成功，添加session
      */
     @RequestMapping("/login")
-    public String login(User user, Model model,HttpSession session){
+    public String login(User user, Model model, RedirectAttributes redirect, HttpSession session){
         User usr = userService.loginByEmailAndPasswordAndActiveStatus(user);
         if (usr!=null){
-            session.setAttribute("loginUser",user);
-
+            //设置session
+            session.setAttribute("loginUser",usr);
 
             System.out.println("成功登录");
             return "redirect:/main.html";

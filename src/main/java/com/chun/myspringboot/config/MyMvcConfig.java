@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
         registry.addViewController("/index.html").setViewName("index");
         registry.addViewController("/user/login.html").setViewName("index");
         registry.addViewController("/main.html").setViewName("main");
-        registry.addViewController("/register.html").setViewName("register/page-register");
+        registry.addViewController("/register.html").setViewName("user/register/page-register");
     }
 
     //拦截所有，放行部分路径
@@ -23,4 +23,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html","/","/login","/css/**",
                 "/js/**","/images/**","","/register.html","/register","/user/checkCode","/toAdmin","/admin","/lib/**");
     }
+
 }

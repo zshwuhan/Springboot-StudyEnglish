@@ -5,6 +5,13 @@ spring:
     password: huang1
 #    type: com.alibaba.druid.pool.DruidDataSource
 
+
+  mvc:
+    #配置它以后移动html页面就不用改路径了！
+    static-path-pattern: /static/**    #静态资源的请求方式
+  resources:
+    static-locations: classpath:/static/  # 静态资源的配置位置，可以写成一个数组配置多个目录
+
   mail:
     host: smtp.qq.com
     username: 904859570@qq.com  # 邮箱地址

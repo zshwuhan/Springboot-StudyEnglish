@@ -19,7 +19,7 @@ public class NoticeController {
     public String toViewNotice(Model model){
         List<Notice> notice = noticeService.queryAllNotice();
         model.addAttribute("notice",notice);
-        return "notice/view-notice";
+        return "user/notice/view-notice";
     }
     //具体查看公告
     @RequestMapping("/viewNotice/{noticeId}")
@@ -27,6 +27,6 @@ public class NoticeController {
 
         Notice notice = noticeService.queryNoticeById(noticeId);
         model.addAttribute("notice",notice);
-        return "notice/observe-notice";
+        return "user/notice/observe-notice";
     }
 }

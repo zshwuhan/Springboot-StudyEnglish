@@ -73,8 +73,8 @@
 <!-- Right Panel -->
 <div id="right-panel" class="right-panel">
     <!-- Header-->
-    <div th:replace="common/header::header"></div>
 
+<div th:replace="common/header::header"/>
     <!-- /#header -->
     <!-- Content -->
     <div class="content">
@@ -113,14 +113,14 @@
                                 </nav>
                                 <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        <p>Raw denim you probably haven't heard of them jean shorts Austin. </p>
+                                        <p th:text="${sentence.getSentenceName()}">句子显示在这里 </p>
                                     </div>
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        <p>是爱思大苏打大阿</p>
+                                        <p th:text="${sentence.getExplain()}">翻译显示在这里</p>
                                     </div>
 
                                 </div>
-
+                                <img src="https://bing.yingjoy.cn/?t=bing&w=1920">
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="col-lg-3 col-md-6"  th:href="@{/studyword}">
+                <a class="col-lg-3 col-md-6"  th:href="@{/viewListen}">
                     <div class="card ">
                         <div class="card-body btn btn-info">
                             <h2>练听力</h2>

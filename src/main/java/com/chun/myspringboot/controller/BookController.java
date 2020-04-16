@@ -19,7 +19,7 @@ public class BookController {
     public String ViewBook(Model model){
         List<Book> book = bookService.queryAllBook();
         model.addAttribute("book",book);
-        return "book/select-book";
+        return "user/book/select-book";
     }
     //具体进入某一书籍
     @RequestMapping("/watchBook/{bookId}")
@@ -27,7 +27,7 @@ public class BookController {
         Book book = bookService.queryBookById(bookId);
 
         model.addAttribute("book",book);
-        return "book/watch-book";
+        return "user/book/watch-book";
     }
 
 }

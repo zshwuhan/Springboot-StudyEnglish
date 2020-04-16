@@ -44,12 +44,12 @@ public class Cet4Controller {
             System.out.println("查询不认识的四级单词");
             progressUtils.ProgressCet4(model);
 
-            return "word/Cet4-StudyWord";
+            return "user/word/Cet4-StudyWord";
 
         }else {//如果没有单词了，给用户提示
             progressUtils.ProgressCet4(model);
             model.addAttribute("msg","恭喜你已经背完单词!请选择其他单词继续学习，或者点击右方按钮重新学习！");
-            return "word/Cet4-Empty";
+            return "user/word/Cet4-Empty";
         }
 
     }
@@ -77,7 +77,7 @@ public class Cet4Controller {
        model.addAttribute("cet4",cet4);
        progressUtils.ProgressCet4(model);
 
-       return "word/Cet4-RememberWord";
+       return "user/word/Cet4-RememberWord";
    }
 
 
@@ -87,7 +87,7 @@ public class Cet4Controller {
         Cet4 cet4 = wordService.queryWordCet4ById(wordId);
         model.addAttribute("cet4",cet4);
         progressUtils.ProgressCet4(model);
-        return "word/Cet4-UnRememberWord";
+        return "user/word/Cet4-UnRememberWord";
     }
 
 

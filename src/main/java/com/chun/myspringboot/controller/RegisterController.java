@@ -59,6 +59,6 @@ public class RegisterController {
     //去忘记密码页面
     @RequestMapping("/toforget")
     public String toForget(){
-        return "register/page-forget";
+        return "user/register/page-forget";
     }
 }

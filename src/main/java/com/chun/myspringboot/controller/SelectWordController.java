@@ -37,7 +37,7 @@ public class SelectWordController {
         model.addAttribute("Cet6Remember",Cet6Remember);
         String percent6 = dataUtils.percent(Cet6Remember, Cet6Number);
         model.addAttribute("percent6",percent6);
-        return "word/select-word";
+        return "user/word/select-word";
     }
 
 }

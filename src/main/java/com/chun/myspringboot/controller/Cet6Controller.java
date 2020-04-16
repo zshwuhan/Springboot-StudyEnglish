@@ -42,7 +42,7 @@ public class Cet6Controller {
             System.out.println("查询不认识的四级单词");
             progressUtils.ProgressCet6(model);
 
-            return "word/Cet6-StudyWord";
+            return "user/word/Cet6-StudyWord";
         }else {
             model.addAttribute("Cet6Unable",Cet6Unable);
             return "main";
@@ -68,7 +68,7 @@ public class Cet6Controller {
         Cet6 cet6 = wordService.queryWordCet6ById(wordId);
         model.addAttribute("cet6",cet6);
         progressUtils.ProgressCet6(model);
-        return "word/Cet6-RememberWord";
+        return "user/word/Cet6-RememberWord";
     }
 
 
@@ -78,7 +78,7 @@ public class Cet6Controller {
         Cet6 cet6 = wordService.queryWordCet6ById(wordId);
         model.addAttribute("cet6",cet6);
         progressUtils.ProgressCet6(model);
-        return "word/Cet6-UnRememberWord";
+        return "user/word/Cet6-UnRememberWord";
     }
 
 

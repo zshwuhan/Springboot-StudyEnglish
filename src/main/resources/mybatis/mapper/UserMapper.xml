@@ -11,7 +11,7 @@
 
     <!--修改用户-->
     <update id="updateUser" parameterType="User">
-        update studywords.user set userName=#{userName},password=#{password},email=#{email},activeStatus=#{activeStatus},role=#{role}   where userId=#{userId} ;
+        update studywords.user set userName=#{userName},password=#{password},email=#{email}   where userId=#{userId} ;
     </update>
 
   <!-- 根据激活码查询用户-->
