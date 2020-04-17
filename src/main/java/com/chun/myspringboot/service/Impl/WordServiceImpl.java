@@ -1,8 +1,7 @@
 package com.chun.myspringboot.service.Impl;
 
-import com.chun.myspringboot.dao.WordMapper;
-import com.chun.myspringboot.pojo.Cet4;
-import com.chun.myspringboot.pojo.Cet6;
+import com.chun.myspringboot.mapper.WordMapper;
+import com.chun.myspringboot.pojo.Word;
 import com.chun.myspringboot.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,108 +13,124 @@ public class WordServiceImpl implements WordService {
     @Autowired
     private WordMapper wordMapper;
 
-
-
-    /**
-     * 四级操作
-     *
-     *
-     */
     @Override
-    public List<Cet4> queryAllWordCet4() {
-        return wordMapper.queryAllWordCet4();
+    public int addWord(Word word) {
+        return wordMapper.addWord(word);
     }
 
     @Override
-    public Cet4 queryWordCet4ById(int wordId) {
-        return wordMapper.queryWordCet4ById(wordId);
+    public int deleteWord(Integer wordId) {
+        return wordMapper.deleteWord(wordId);
     }
 
     @Override
-    public int queryWordCet4Number() {
-        return wordMapper.queryWordCet4Number();
+    public int updateWord(Integer wordId) {
+        return wordMapper.updateWord(wordId);
     }
 
     @Override
-    public int queryWordCet4RememberNumber() {
-        return wordMapper.queryWordCet4RememberNumber();
+    public int updateWordStudy1(Integer wordId) {
+        return wordMapper.updateWordStudy1(wordId);
     }
 
     @Override
-    public Cet4 queryWordCet4Unable() {
-        return wordMapper.queryWordCet4Unable();
+    public int updateWordStudy0(Integer wordId) {
+        return wordMapper.updateWordStudy0(wordId);
     }
+
+    @Override
+    public int updateWordRemember1(Integer wordId) {
+        return wordMapper.updateWordRemember1(wordId);
+    }
+
+    @Override
+    public int updateWordRemember0(Integer wordId) {
+        return wordMapper.updateWordRemember0(wordId);
+    }
+
 
 
 
     @Override
-    public int addWordCet4Remember(int wordId) {
-        return wordMapper.addWordCet4Remember(wordId);
+    public int updateWordCollection1(Integer wordId) {
+        return wordMapper.updateWordCollection1(wordId);
     }
 
     @Override
-    public int deleteCet4Remember(int wordId) {
-        return wordMapper.deleteCet4Remember(wordId);
+    public int updateWordCollection0(Integer wordId) {
+        return wordMapper.updateWordCollection0(wordId);
     }
 
     @Override
-    public int deleteAllCet4Remember() {
-        return wordMapper.deleteAllCet4Remember();
+    public List<Word> queryAllWord() {
+        return wordMapper.queryAllWord();
     }
 
     @Override
-    public int addCollection(int wordId) {
-        return wordMapper.addCollection(wordId);
+    public Word queryWordById(Integer wordId) {
+        return wordMapper.queryWordById(wordId);
     }
 
     @Override
-    public int deleteCollection(int wordId) {
-        return wordMapper.deleteCollection(wordId);
-    }
-
-
-    /**
-     * 六级操作
-     *
-     *
-     */
-
-    @Override
-    public List<Cet6> queryAllWordCet6() {
-        return wordMapper.queryAllWordCet6();
+    public Word queryWordStudy0ByGrade(Integer grade) {
+        return wordMapper.queryWordStudy0ByGrade(grade);
     }
 
     @Override
-    public int queryWordCet6Number() {
-        return wordMapper.queryWordCet6Number();
+    public int updateWordStudyByGrade(Integer grade) {
+        return wordMapper.updateWordStudyByGrade(grade);
+    }
+
+
+    @Override
+    public List<Word> queryAllWordCollection() {
+        return wordMapper.queryAllWordCollection();
     }
 
     @Override
-    public int queryWordCet6RememberNumber() {
-        return wordMapper.queryWordCet6RememberNumber();
+    public List<Word> queryWordCollectionByGrade(Integer grade) {
+        return wordMapper.queryWordCollectionByGrade(grade);
+    }
+
+
+
+
+    @Override
+    public List<Word> queryAllRemember() {
+        return queryAllRemember();
     }
 
     @Override
-    public Cet6 queryWordCet6Unable() {
-        return wordMapper.queryWordCet6Unable();
+    public List<Word> queryAllWordRememberByGrade(Integer grade) {
+        return wordMapper.queryAllWordRememberByGrade(grade);
     }
+
+
     @Override
-    public int addWordCet6Remember(int wordId) {
-        return wordMapper.addWordCet6Remember(wordId);
+    public List<Word> queryAllUnremembered() {
+        return wordMapper.queryAllUnremembered();
     }
 
     @Override
-    public int deleteCet6Remember(int wordId) {
-        return wordMapper.deleteCet6Remember(wordId);
+    public List<Word> queryAllWordUnrememberedByGrade(Integer grade) {
+        return wordMapper.queryAllWordUnrememberedByGrade(grade);
     }
 
     @Override
-    public int deleteAllCet6Remember() {
-        return wordMapper.deleteAllCet6Remember();
+    public int queryAllWordNumberByGrade(Integer grade) {
+        return wordMapper.queryAllWordNumberByGrade(grade);
     }
 
     @Override
-    public Cet6 queryWordCet6ById(int wordId) {
-        return wordMapper.queryWordCet6ById(wordId);
+    public int queryRememberNumberByGrade(Integer grade) {
+        return wordMapper.queryRememberNumberByGrade(grade);
     }
+
+    @Override
+    public int queryStudyNumberByGrade(Integer grade) {
+        return wordMapper.queryStudyNumberByGrade(grade);
+    }
+
+
+
 }

@@ -1,60 +1,115 @@
 package com.chun.myspringboot.service;
 
-import com.chun.myspringboot.pojo.Cet4;
-import com.chun.myspringboot.pojo.Cet6;
+import com.chun.myspringboot.pojo.Word;
 
 import java.util.List;
 
 public interface WordService {
 
+
     /**
-     * 四级操作
+     * ############################
+     *          增加
+     *#############################
      */
-    //增加一个认识的单词
-    int addWordCet4Remember(int wordId );
-    //删除一个认识的单词
-    int deleteCet4Remember(int wordId);
-    //删除所有认识的单词
-    int deleteAllCet4Remember();
-
-    //把单词加入收藏夹
-    int addCollection(int wordId);
-    //把单词移除收藏夹
-    int deleteCollection(int wordId);
-
-    //查询全部cet4单词
-    List<Cet4> queryAllWordCet4();
-
-    //根据Id查询cet4单词
-    Cet4 queryWordCet4ById(int wordId);
-
-    //查询四级单词数量
-    int queryWordCet4Number();
-    //查询四级已会单词数量
-    int queryWordCet4RememberNumber();
-    //查询四级不会的单词
-    Cet4 queryWordCet4Unable();
+    //增加一个单词
+    int addWord(Word word);
 
 
     /**
-     * 六级操作
+     *#############################
+     *          删除
+     *#############################
      */
-    //增加一个认识的单词
-    int addWordCet6Remember(int wordId );
-    //删除一个认识的单词
-    int deleteCet6Remember(int wordId);
-    //删除所有认识的单词
-    int deleteAllCet6Remember();
+    //删除一个单词
+    int deleteWord(Integer wordId);
 
-    //根据id查询一个单词
-    Cet6 queryWordCet6ById(int wordId);
+    /**
+     *#############################
+     *          修改
+     *#############################
+     */
+    //修改一个单词
+    int updateWord(Integer wordId);
 
-    //查询全部cet6单词
-    List<Cet6> queryAllWordCet6();
-    //查询六级单词数量
-    int queryWordCet6Number();
-    //查询六级已会单词数量
-    int queryWordCet6RememberNumber();
-    //查询六级不会的单词
-    Cet6 queryWordCet6Unable();
+    //修改一个单词study变为1
+    int updateWordStudy1(Integer wordId);
+    //修改一个单词study变为0
+    int updateWordStudy0(Integer wordId);
+
+    //修改一个单词remember变为1
+    int updateWordRemember1(Integer wordId);
+    //修改一个单词remember变为0
+    int updateWordRemember0(Integer wordId);
+
+
+    //修改一个单词collection变为1
+    int updateWordCollection1(Integer wordId);
+    //修改一个单词collection变为0
+    int updateWordCollection0(Integer wordId);
+
+    /**
+     *#############################
+     *          查询
+     *#############################
+     */
+
+    //查询所有单词信息
+    List<Word> queryAllWord();
+    //根据ID查询一个单词的信息
+    Word queryWordById(Integer wordId);
+
+    /*
+       ----------------------------
+       学习功能（从数据库随机查询一个单词）
+       ----------------------------
+     */
+
+    //根据grade查询未学习的单词
+    Word queryWordStudy0ByGrade(Integer grade);
+    //重新学习单词
+    int updateWordStudyByGrade(Integer grade);
+
+    /*
+       ---------------------------
+            收藏功能
+       ---------------------------
+     */
+    //查询所有收藏的单词
+    List<Word> queryAllWordCollection();
+    //根据Grade查询收藏的单词
+    List<Word> queryWordCollectionByGrade(Integer grade);
+
+
+
+    /*
+       ---------------------------
+             记住与未记住功能
+       ---------------------------
+     */
+    //查询所有记住的单词
+    List<Word> queryAllRemember();
+    //根据grade查询记住的单词
+    List<Word> queryAllWordRememberByGrade(Integer grade);
+
+    //查询所有没有记住的单词
+    List<Word> queryAllUnremembered();
+    //根据grade查询没有记住的单词
+    List<Word> queryAllWordUnrememberedByGrade(Integer grade);
+
+
+    /*
+      ---------------------------
+            查询数量功能
+      ---------------------------
+     */
+    //根据grade查询单词数量
+    int queryAllWordNumberByGrade(Integer grade);
+    //根据grade查询已会单词数量
+    int queryRememberNumberByGrade(Integer grade);
+    //根据grade查询已经学习单词数量
+    int queryStudyNumberByGrade(Integer grade);
+
+
+
 }

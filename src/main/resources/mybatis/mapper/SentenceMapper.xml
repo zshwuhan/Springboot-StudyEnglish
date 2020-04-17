@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--namespace：绑定一个对应的Dao/Mapper接口-->
-<mapper namespace="com.chun.myspringboot.dao.SentenceMapper">
+<mapper namespace="com.chun.myspringboot.mapper.SentenceMapper">
 
     <!--查看所有句子信息-->
     <select id="queryAllSentence" resultType="Sentence">

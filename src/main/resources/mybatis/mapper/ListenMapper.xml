@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--namespace：绑定一个对应的Dao/Mapper接口-->
-<mapper namespace="com.chun.myspringboot.dao.ListenMapper">
+<mapper namespace="com.chun.myspringboot.mapper.ListenMapper">
 
     <!--查看所有听力信息-->
     <select id="queryAllListen" resultType="Listen">

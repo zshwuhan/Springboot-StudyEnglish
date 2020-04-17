@@ -1,6 +1,6 @@
 package com.chun.myspringboot.service.Impl;
 
-import com.chun.myspringboot.dao.UserMapper;
+import com.chun.myspringboot.mapper.UserMapper;
 import com.chun.myspringboot.pojo.User;
 import com.chun.myspringboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

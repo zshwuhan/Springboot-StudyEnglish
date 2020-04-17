@@ -1,6 +1,6 @@
 package com.chun.myspringboot.service.Impl;
 
-import com.chun.myspringboot.dao.SentenceMapper;
+import com.chun.myspringboot.mapper.SentenceMapper;
 import com.chun.myspringboot.pojo.Sentence;
 import com.chun.myspringboot.service.SentenceService;
 import org.springframework.beans.factory.annotation.Autowired;

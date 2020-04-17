@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--namespace：绑定一个对应的Dao/Mapper接口-->
-<mapper namespace="com.chun.myspringboot.dao.UserMapper">
+<mapper namespace="com.chun.myspringboot.mapper.UserMapper">
     <!--  增加用户-->
     <insert id="addUser" parameterType="User" >
         insert into studywords.user (userName, password, email, activeCode,activeStatus,role) values (#{userName},#{password},#{email},#{activeCode},#{activeStatus},#{role});

@@ -1,6 +1,6 @@
 package com.chun.myspringboot.service.Impl;
 
-import com.chun.myspringboot.dao.NoticeMapper;
+import com.chun.myspringboot.mapper.NoticeMapper;
 import com.chun.myspringboot.pojo.Notice;
 import com.chun.myspringboot.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -77,6 +77,7 @@
                     </div>
                     <div class="progress-box progress-1">
                         <h4 class="por-title">已完成的进度</h4>
+
                         <strong class="por-txt float-right">[[${Cet4Remember}]]/[[${Cet4Number}]]词</strong>
                         <br>
                         <div class="progress mb-2" style="height: 5px;">
@@ -93,8 +94,8 @@
                     </div>
                 </div>
 
-                <a class=" btn btn-outline-secondary" th:href="@{/studyWordCet4}">
-                    <strong>选择四级</strong>
+                <a class=" btn btn-outline-secondary" th:href="@{/studyWord/}+${cet4}">
+                    <strong >选择四级</strong>
                 </a>
             </div>
         </div>
@@ -121,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <a class=" btn btn-outline-secondary" th:href="@{/studyWordCet6}">
+                <a class=" btn btn-outline-secondary" th:href="@{/studyWord/}+${cet6}">
                     <strong>选择六级</strong>
                 </a>
             </div>

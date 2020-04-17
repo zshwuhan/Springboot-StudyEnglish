@@ -1,6 +1,6 @@
 package com.chun.myspringboot.service.Impl;
 
-import com.chun.myspringboot.dao.BookMapper;
+import com.chun.myspringboot.mapper.BookMapper;
 import com.chun.myspringboot.pojo.Book;
 import com.chun.myspringboot.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;

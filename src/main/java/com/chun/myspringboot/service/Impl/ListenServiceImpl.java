@@ -1,6 +1,6 @@
 package com.chun.myspringboot.service.Impl;
 
-import com.chun.myspringboot.dao.ListenMapper;
+import com.chun.myspringboot.mapper.ListenMapper;
 import com.chun.myspringboot.pojo.Listen;
 import com.chun.myspringboot.service.ListenService;
 import org.springframework.beans.factory.annotation.Autowired;
