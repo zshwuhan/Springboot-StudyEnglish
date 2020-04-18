@@ -1,6 +1,7 @@
 package com.chun.myspringboot.service;
 
 import com.chun.myspringboot.pojo.Word;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -58,6 +59,10 @@ public interface WordService {
     List<Word> queryAllWord();
     //根据ID查询一个单词的信息
     Word queryWordById(Integer wordId);
+
+    //分页查询
+
+    PageInfo<Word> queryAllCollectionWordByPage(int pageNum, int pageSize);
 
     /*
        ----------------------------

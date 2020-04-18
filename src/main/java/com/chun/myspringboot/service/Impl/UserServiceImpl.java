@@ -42,10 +42,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.updateUser(user);
     }
 
-    @Override
-    public int updateUserName(User user) {
-        return userMapper.updateUserName(user);
-    }
+
 
 
 }

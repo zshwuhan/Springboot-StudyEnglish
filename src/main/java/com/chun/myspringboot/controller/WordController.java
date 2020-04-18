@@ -144,7 +144,7 @@ public class WordController {
         return "redirect:/studyWord/"+grade;
     }
 
-//    //加入收藏夹
+//   加入收藏夹
     @RequestMapping("/addCollection/{wordId}")
     public String AddCollection(@PathVariable("wordId")int wordId,Model model){
         //先看看这个单词是不是已经收藏了
@@ -167,4 +167,5 @@ public class WordController {
 
         return "user/word/study-word";
     }
+
 }

@@ -33,8 +33,7 @@ public interface UserMapper {
     int deleteUser(Integer userId);
     //修改用户
     int updateUser(User user);
-    //修改用户名字
-    int updateUserName(User user);
+
 
     //查询所有用户信息
      List<User> queryAllUser();

@@ -24,12 +24,9 @@
 
                     <li class="menu-title">个人中心</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-exchange"></i>修改个人信息</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">修改邮箱</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">修改密码</a></li>
-                        </ul>
+                        <a th:href="@{/toUser}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-exchange"></i>修改个人信息</a>
                     </li>
+
                     <li class="menu-item-has-children dropdown">
                         <a th:href="@{/logout}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-level-down"></i>退出</a>
                     </li>

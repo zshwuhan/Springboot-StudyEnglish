@@ -24,6 +24,7 @@ public class MainPageController {
         //进入用户主页
         @RequestMapping("/main.html")
         public String toMainPage(Model model, HttpSession session){
+
             //查询最新公告
             Notice notice = noticeService.queryNewNoticeById();
             model.addAttribute("notice",notice);

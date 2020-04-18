@@ -23,7 +23,7 @@ public class LoginController {
      *登录成功，添加session
      */
     @RequestMapping("/login")
-    public String login(User user, Model model, RedirectAttributes redirect, HttpSession session){
+    public String login(User user, Model model, HttpSession session){
         User usr = userService.loginByEmailAndPasswordAndActiveStatus(user);
         if (usr!=null){
             //设置session

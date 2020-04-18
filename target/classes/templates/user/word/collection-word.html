@@ -58,7 +58,7 @@
                             <ol class="breadcrumb text-right">
                                 <li><a href="#">主页</a></li>
                                 <li><a href="#">学习中心</a></li>
-                                <li class="active">书籍</li>
+                                <li class="active">收藏</li>
                             </ol>
                         </div>
                     </div>
@@ -72,33 +72,49 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">书籍栏</strong>
+                        <strong class="card-title">收藏栏</strong>
                     </div>
                     <div class="card-body">
                         <table class="table table-layout:fixed" >
                             <thead>
                             <tr>
-                                <th scope="col">序号</th>
-                                <th scope="col">书名</th>
-                                <th scope="col">作者</th>
-                                <th scope="col">简介</th>
+                                <th scope="col">等级</th>
+                                <th scope="col">单词</th>
+                                <th scope="col">读音</th>
+                                <th scope="col">解释</th>
+
                                 <th scope="col">操作</th>
                             </tr>
                             </thead>
                             <tbody>
                             <style type="text/css">.table {table-layout:fixed}</style>
-                            <tr th:each="book:${book}">
-                                <td th:text="${book.getBookId()}">序号</td>
-                                <td th:text="${book.getBookName()}">书名</td>
-                                <td  th:text="${book.getBookUser()}">作者</td>
-                                <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;"th:text="${book.getDescription()}" >简介</td>
+
+                            <tr th:each="word:${word}">
+                                <td><b> <div th:switch="${word.getGrade()}">
+                                    <b th:case="1">四级</b>
+                                    <b th:case="2">六级</b>
+                                    <b th:case="3">托福</b>
+                                    <b th:case="4">雅思</b>
+                                </div></b></td>
+                                <td th:text="${word.getWordName()}">单词</td>
+                                <td th:text="${word.getAudio()}">读音</td>
+                                <td  th:text="${word.getExplanation()}">解释</td>
+
                                 <td>
-                                    <a class="btn btn-sm btn-success" th:href="@{/watchBook/}+${book.getBookId()}">查看</a>
+                                    <a class="btn btn-sm btn-danger" th:href="@{/deleteWordCollection/}+${word.getWordId()}">取消收藏</a>
                                 </td>
                             </tr>
 
                             </tbody>
                         </table>
+                        <!--分页开始-->
+                        <div class="col-sm-12 col-md-12">
+                            <div class="dataTables_paginate paging_simple_numbers" id="bootstrap-data-table_paginate">
+
+                            </div>
+                        </div>
+                        <!--分页结束-->
+
                     </div>
                 </div>
             </div>

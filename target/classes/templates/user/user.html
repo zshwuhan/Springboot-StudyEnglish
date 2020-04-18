@@ -91,8 +91,8 @@
                         <div class="page-title">
                             <ol class="breadcrumb text-right">
                                 <li><a href="#">主页</a></li>
-                                <li><a href="#">学习中心</a></li>
-                                <li class="active">收藏夹</li>
+                                <li><a href="#">个人中心</a></li>
+                                <li class="active">修改信息</li>
                             </ol>
                         </div>
                     </div>
@@ -103,24 +103,38 @@
     <div class="content">
         <div class="animated fadeIn">
 
-                <div class="row">
-                    <a class="col-lg-6 col-md-6"  th:href="@{/wordCollection}">
-                        <div class="card ">
-                            <div class="card-body btn btn-success">
-                                <h2>单词收藏</h2>
-                            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">个人信息</div>
+                        <div class="card-body card-block">
+                            <form th:action="@{/userUpdate/}+${loginUser.getUserId()}" method="post">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input th:value="${loginUser.getUserName()}"  name="userName" placeholder="Username" class="form-control">
+                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input th:value="${loginUser.getEmail()}" type="email" name="email" placeholder="Email" class="form-control">
+                                        <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input th:value="${loginUser.getPassword()}"  id="password" name="password" placeholder="Password" class="form-control">
+                                        <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                                    </div>
+                                </div>
+                                <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">修改</button></div>
+                            </form>
                         </div>
-                    </a>
-                    <a class="col-lg-6 col-md-6"  th:href="@{/wordRaw}">
-                        <div class="card ">
-                            <div class="card-body btn btn-info">
-                                <h2>生词本</h2>
-                            </div>
-                        </div>
-                    </a>
-
-
+                    </div>
                 </div>
+
+
+            </div>
 
 
 
