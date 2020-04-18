@@ -15,10 +15,10 @@
 ## 部分图片展示
 **登录页面**
 ![Image text](https://github.com/Weirdchun/Springboot-StudyEnglish/blob/master/src/main/resources/public/image/1.png)
----
+
 **主页**
 ![Image text](https://github.com/Weirdchun/Springboot-StudyEnglish/blob/master/src/main/resources/public/image/2.png)
----
+
 **背单词**
 ![Image text](https://github.com/Weirdchun/Springboot-StudyEnglish/blob/master/src/main/resources/public/image/3.png)
 
