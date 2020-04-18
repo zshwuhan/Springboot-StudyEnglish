@@ -31,7 +31,7 @@ public interface WordService {
      *#############################
      */
     //修改一个单词
-    int updateWord(Integer wordId);
+    int updateWord(Word word);
 
     //修改一个单词study变为1
     int updateWordStudy1(Integer wordId);

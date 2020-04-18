@@ -31,9 +31,9 @@
     #######################################################
     -->
     <!--修改一个单词-->
-    <update id="updateWord" parameterType="Integer" >
+    <update id="updateWord" parameterType="Word" >
         update studywords.word set
-        wordName=#{wordName},audio=#{audio},explanation=#{explanation},example=#{example},grade=#{example}
+        wordName=#{wordName},audio=#{audio},explanation=#{explanation},example=#{example},grade=#{grade}
         where wordId=#{wordId};
     </update>
     <!--修改一个单词study变为1-->

@@ -89,7 +89,12 @@
                             <tr th:each="listen:${listen}">
                                 <td th:text="${listen.getListenId()}">序号</td>
                                 <td th:text="${listen.getListenName()}">名字</td>
-                                <td  th:text="${listen.getGrade()}">等级</td>
+                                <td><b> <div th:switch="${listen.getGrade()}">
+                                    <b th:case="1">四级</b>
+                                    <b th:case="2">六级</b>
+                                    <b th:case="3">托福</b>
+                                    <b th:case="4">雅思</b>
+                                </div></b></td>
                                 <td>
                                     <a class="btn btn-sm btn-success" th:href="@{/watchListen/}+${listen.getListenId()}">查看</a>
                                 </td>

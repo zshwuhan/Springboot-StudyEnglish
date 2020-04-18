@@ -26,8 +26,8 @@ public class WordServiceImpl implements WordService {
     }
 
     @Override
-    public int updateWord(Integer wordId) {
-        return wordMapper.updateWord(wordId);
+    public int updateWord(Word word) {
+        return wordMapper.updateWord(word);
     }
 
     @Override

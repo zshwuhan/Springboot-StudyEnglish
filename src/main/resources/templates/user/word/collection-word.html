@@ -78,11 +78,11 @@
                         <table class="table table-layout:fixed" >
                             <thead>
                             <tr>
-                                <th scope="col">等级</th>
+                                <th scope="col">序号</th>
                                 <th scope="col">单词</th>
                                 <th scope="col">读音</th>
                                 <th scope="col">解释</th>
-
+                                <th scope="col">等级</th>
                                 <th scope="col">操作</th>
                             </tr>
                             </thead>
@@ -90,16 +90,16 @@
                             <style type="text/css">.table {table-layout:fixed}</style>
 
                             <tr th:each="word:${word}">
+                                <td th:text="${word.getWordId()}">序号</td>
+                                <td th:text="${word.getWordName()}">单词</td>
+                                <td th:text="${word.getAudio()}">读音</td>
+                                <td  th:text="${word.getExplanation()}">解释</td>
                                 <td><b> <div th:switch="${word.getGrade()}">
                                     <b th:case="1">四级</b>
                                     <b th:case="2">六级</b>
                                     <b th:case="3">托福</b>
                                     <b th:case="4">雅思</b>
                                 </div></b></td>
-                                <td th:text="${word.getWordName()}">单词</td>
-                                <td th:text="${word.getAudio()}">读音</td>
-                                <td  th:text="${word.getExplanation()}">解释</td>
-
                                 <td>
                                     <a class="btn btn-sm btn-danger" th:href="@{/deleteWordCollection/}+${word.getWordId()}">取消收藏</a>
                                 </td>

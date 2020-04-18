@@ -32,7 +32,8 @@
 
 
 
-<div th:replace="common/leftbar::leftbar"></div>
+<!-- Left Panel -->
+<div th:replace="common/admin-leftbar::leftbar"/>
 
 
 
@@ -40,7 +41,43 @@
 
     <!-- Header-->
     <!-- Header-->
-    <div th:replace="common/header::header"/>
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="top-left">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/admin/main}"><img th:src="@{/static/images/logo.png}" alt="Logo"></a>
+                <a class="navbar-brand hidden" href=""><img th:src="@{/static/images/logo2.png}" alt="Logo"></a>
+                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+
+
+        <!-- 导航栏-->
+        <div class="top-right">
+            <div class="header-menu">
+                <div class="header-left">
+                    <div class="dropdown for-notification">
+                        管理员您好！
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-secret"></i>
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="notification">
+                            <p class="red">控制中心</p>
+                            <a class="dropdown-item media" th:href="@{/templates/admin/main.html}">
+                                <i class="f fa fa-user"></i>
+                                <p>普通用户</p>
+                            </a>
+                            <a class="dropdown-item media" th:href="@{/logout}">
+                                <i class="fa fa-power-off"></i>
+                                <p>退出登录</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header >
 
     <div class="breadcrumbs">
         <div class="breadcrumbs-inner">
@@ -57,8 +94,8 @@
                         <div class="page-title">
                             <ol class="breadcrumb text-right">
                                 <li><a href="#">主页</a></li>
-                                <li><a href="#">学习中心</a></li>
-                                <li class="active">听力</li>
+                                <li><a href="#">后台管理</a></li>
+                                <li class="active">单词管理</li>
                             </ol>
                         </div>
                     </div>
@@ -72,31 +109,37 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">听力</strong>
+                        <strong class="card-title">单词栏</strong>
+                        <h2 class="float-right"><a class="btn btn-outline-success" th:href="@{/admin/toAddWord}" >添加单词</a></h2>
                     </div>
                     <div class="card-body">
                         <table class="table table-layout:fixed" >
                             <thead>
                             <tr>
                                 <th scope="col">序号</th>
-                                <th scope="col">名字</th>
+                                <th scope="col">单词</th>
+                                <th scope="col">读音</th>
+                                <th scope="col">解释</th>
                                 <th scope="col">等级</th>
                                 <th scope="col">操作</th>
                             </tr>
                             </thead>
                             <tbody>
                             <style type="text/css">.table {table-layout:fixed}</style>
-                            <tr th:each="listen:${listen}">
-                                <td th:text="${listen.getListenId()}">序号</td>
-                                <td th:text="${listen.getListenName()}">名字</td>
-                                <td><b> <div th:switch="${listen.getGrade()}">
+                            <tr th:each="word:${word}">
+                                <td th:text="${word.getWordId()}">序号</td>
+                                <td th:text="${word.getWordName()}">单词</td>
+                                <td  th:text="${word.getAudio()}">读音</td>
+                                <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" th:text="${word.getExplanation()}" >解释</td>
+                                <td><b> <div th:switch="${word.getGrade()}">
                                     <b th:case="1">四级</b>
                                     <b th:case="2">六级</b>
                                     <b th:case="3">托福</b>
                                     <b th:case="4">雅思</b>
                                 </div></b></td>
                                 <td>
-                                    <a class="btn btn-sm btn-success" th:href="@{/watchListen/}+${listen.getListenId()}">查看</a>
+                                    <a class="btn btn-sm btn-primary" th:href="@{/admin/toUpdateWord/}+${word.getWordId()}">编辑</a>
+                                    <a class="btn btn-sm btn-danger" th:href="@{/admin/deleteWord/}+${word.getWordId()}">删除</a>
                                 </td>
                             </tr>
 
@@ -112,7 +155,6 @@
     <div class="clearfix"></div>
 
     <div th:replace="common/footer::footer"/>
-
 
 </div><!-- /#right-panel -->
 

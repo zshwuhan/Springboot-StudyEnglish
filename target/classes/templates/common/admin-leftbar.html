@@ -7,13 +7,9 @@
                 <li class="active">
                     <a th:href="@{/admin/main}"><i class="menu-icon fa fa-laptop"></i>主页</a>
                 </li>
-                <li class="menu-title">操作</li><!-- /.menu-title -->
+                <li class="menu-title">后台管理</li><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-edit"></i>单词管理</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">四级</a></li>
-                        <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">六级</a></li>
-                    </ul>
+                    <a th:href="@{/admin/viewWord}" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-edit"></i>单词管理</a>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a th:href="@{/admin/viewBook}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>书籍管理</a>
@@ -21,20 +17,15 @@
                 <li class="menu-item-has-children dropdown">
                     <a th:href="@{/admin/viewNotice}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-volume-down"></i>公告管理</a>
                 </li>
-
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>修改用户</a>
+                    <a th:href="@{/admin/viewUser}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>用户管理</a>
 
                 </li>
 
                 <li class="menu-title">个人中心</li><!-- /.menu-title -->
+
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>修改密码</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                    </ul>
+                    <a th:href="@{/logout}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-level-down"></i>退出</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
