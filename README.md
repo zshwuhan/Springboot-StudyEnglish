@@ -9,18 +9,26 @@
 3.数据库ORM：Mybatis<br>
 4.数据库：MySQL<br>
 5.前端框架：BootStrap<br>
-5.模板引擎：Thymeleaf<br>
-6.文章展示：Editor.md<br>
+6.模板引擎：Thymeleaf<br>
+7.文章展示：Editor.md<br>
 
 ## 部分图片展示
 **登录页面**
-![Image text](src/main/resources/public/image/1.png)
+![Image text](https://github.com/Weirdchun/Springboot-StudyEnglish/blob/master/src/main/resources/public/image/1.png)
 ---
 **主页**
-![Image text](src/main/resources/public/image/2.png)
+![Image text](https://github.com/Weirdchun/Springboot-StudyEnglish/blob/master/src/main/resources/public/image/2.png)
 ---
 **背单词**
-![Image text](src/main/resources/public/image/3.png)
+![Image text](https://github.com/Weirdchun/Springboot-StudyEnglish/blob/master/src/main/resources/public/image/3.png)
+
+## 快速启动
+1. 把压缩包下载并且解压，
+2. 把项目导入**IDEA**，等待**Maven**加载
+3. 把`StudyEnglish.sql`中的sql语句复制粘贴到SQLyog（其他的数据库工具也可以）中执行
+4. 在IDEA中连接MySQL数据库，在`application.yml`中修改自己的数据库信息
+5. 启动项目,打开浏览器搜索 http://localhost:8080/ 进行访问
+
 ## 功能介绍
 本学习系统分为注册登录模块，公告展示模块，背单词模块，听力练习模块，阅读书籍模块，每日一句模块，个人中心模块，以及后台管理模块。
 #### 登录注册模块
